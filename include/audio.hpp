@@ -26,7 +26,6 @@ typedef struct
 
 struct AUDIO_FUNCTIONS
 {
-	static void AUDIO_MAIN();
 	static bool SET_NORM;
 };
 
@@ -43,5 +42,16 @@ struct AUDIO_ENUM
 	{
 		EQUAL = '=',
 		NOT_EQ_TO = '!=',
+	};
+
+	enum CHANNEL_MAPPING
+	{
+		NONE = 1000,
+		DISABLE_L,
+		DISABLE_R,
+		MUTE_L,
+		MUTE_R,
+		MONO,
+		SWAP
 	};
 };
