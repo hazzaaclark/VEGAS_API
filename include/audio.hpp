@@ -26,5 +26,5 @@ typedef struct
 
 struct AUDIO_FUNCTIONS
 {
-	static void SET_NORM();
+	static bool SET_NORM;
 };
