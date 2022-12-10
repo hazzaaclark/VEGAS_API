@@ -1,11 +1,10 @@
-#include "audio.h"
-#include "track.h"
+#include "audio.hpp"
+#include "track.hpp"
 
 static double NORMALISE_GAIN()
 {
 	AUDIO_EVENT::RESULT = false;
 	AUDIO_EVENT::GET_NORMALISE = TRACK_EVENT::TRACK_ID, TRACK_EVENT::EVENT_ID;
 	return AUDIO_EVENT::RESULT;
-
-	SET_NORMALISE();
+	AUDIO_FUNCTIONS::SET_NORM = TRACK_EVENT::TRACK_ID, TRACK_EVENT::EVENT_ID;
 }
