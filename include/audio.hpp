@@ -30,19 +30,16 @@ struct AUDIO_FUNCTIONS
 	static bool SET_NORM;
 };
 
-struct FLAGS
+struct AUDIO_ENUM
 {
-	enum
+	enum AUDIO_GAINN
 	{
 		NORM = 1,
 		GAIN = 2,
 		NONE = 0
 	};
-};
 
-struct OPERATOR
-{
-	enum
+	enum AUDIO_OPERATION
 	{
 		EQUAL = '=',
 		NOT_EQ_TO = '!=',
