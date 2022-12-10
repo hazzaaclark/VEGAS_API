@@ -32,7 +32,7 @@ struct AUDIO_FUNCTIONS
 
 struct AUDIO_ENUM
 {
-	enum AUDIO_GAINN
+	enum AUDIO_GAIN
 	{
 		NORM = 1,
 		GAIN = 2,
