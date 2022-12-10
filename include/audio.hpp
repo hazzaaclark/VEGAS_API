@@ -26,5 +26,25 @@ typedef struct
 
 struct AUDIO_FUNCTIONS
 {
+	static void AUDIO_MAIN();
 	static bool SET_NORM;
+};
+
+struct FLAGS
+{
+	enum
+	{
+		NORM = 1,
+		GAIN = 2,
+		NONE = 0
+	};
+};
+
+struct OPERATOR
+{
+	enum
+	{
+		EQUAL = '=',
+		NOT_EQ_TO = '!=',
+	};
 };
