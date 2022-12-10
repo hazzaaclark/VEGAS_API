@@ -24,4 +24,7 @@ typedef struct
 
 } AUDIO_EVENT;
 
-static void SET_NORMALISE();
+struct AUDIO_FUNCTIONS
+{
+	static void SET_NORM();
+};
