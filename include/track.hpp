@@ -11,7 +11,7 @@
 
 typedef struct
 {
-	static uint32_t TRACK_ID;
-	static uint32_t EVENT_ID;
+	static const uint32_t TRACK_ID;
+	static const uint32_t EVENT_ID;
 
 } TRACK_EVENT;
