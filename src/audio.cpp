@@ -4,8 +4,8 @@
 static bool EVENT_TYPE()
 {
 	AUDIO_EVENT::IS_VIDEO || AUDIO_EVENT::IS_AUDIO;
+	return;
 }
-
 
 static bool OPERATION()
 {
