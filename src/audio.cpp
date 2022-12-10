@@ -11,6 +11,7 @@ static bool OPERATION()
 {
 	AUDIO_ENUM::AUDIO_OPERATION::EQUAL;
 	AUDIO_ENUM::AUDIO_OPERATION::NOT_EQ_TO;
+	return;
 }
 
 static double NORMALISE_GAIN()
