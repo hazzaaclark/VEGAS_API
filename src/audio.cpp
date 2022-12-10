@@ -1,6 +1,12 @@
 #include "audio.hpp"
 #include "track.hpp"
 
+static bool OPERATION()
+{
+	OPERATOR::EQUAL;
+	OPERATOR::NOT_EQ_TO;
+}
+
 static double NORMALISE_GAIN()
 {
 	AUDIO_EVENT::RESULT = false;
