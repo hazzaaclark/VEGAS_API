@@ -4,6 +4,8 @@
 #define PCH_H
 
 #include "framework.h"
-#include "audio.h"
+#include "audio.hpp"
+#include "track.hpp"
+#include "COM.hpp"
 
 #endif
