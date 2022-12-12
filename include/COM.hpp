@@ -9,18 +9,26 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#define BUS_TRACK_COM 
-#define COM 
+#define BUS_TRACK_COM
+#define COM
+#define EFFECT_COM
 #define EVENT_COM
-#define EVELOPE_COM 
+#define EVELOPE_COM
 #define FILE_OPEN_COM
+
+typedef struct EFFECT_COM
+{
+	void GET_EFFECT_COUNT(int32_t COUNT);
+	void GET_SESSION_ID(int32_t INDEX, uint32_t SESSION_ID);
+	void GET_EFFECT_INDEX(uint32_t SESSION_ID, int32_t INDEX);
+
+};
 
 typedef struct EVENT_COM
 {
-	void GET_INDEX(unsigned int TRACK_ID, uint32_t EVENT_ID);
-	void GET_MEDIA_TYPE(unsigned int TRACK_ID, uint32_t EVENT_ID);
-	void GET_NAME(unsigned int TRACK_ID, uint32_t EVENT_ID);
-	void SET_NAME(unsigned int TRACK_ID, uint32_t EVENT_ID);
-	void GET_LENGTH(unsigned int TRACK_ID, uint32_t EVENT_ID);
-
+	void GET_INDEX(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	void GET_MEDIA_TYPE(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	void GET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	void SET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	void GET_LENGTH(uint32_t TRACK_ID, uint64_t EVENT_ID);
 };
