@@ -7,7 +7,7 @@ static bool EVENT_TYPE()
 	return;
 }
 
-static bool OPERATION()
+static bool OPERATION(AUDIO_EVENT A, AUDIO_EVENT B)
 {
 	AUDIO_OPERATION::EQUAL;
 	AUDIO_OPERATION::NOT_EQ_TO;
