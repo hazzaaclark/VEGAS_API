@@ -35,7 +35,8 @@ typedef struct EVENT_COM
 	void GET_LENGTH(uint32_t TRACK_ID, uint64_t EVENT_ID);
 };
 
-typedef struct IPLUGIN_NODE_COM
+struct IPLUGIN_NODE_COM
 {
-
+	void GET_COUNT(int32_t COUNT);
+	void GET_CHILD_BY_INDEX(int32_t INDEX, IPLUGIN_NODE_COM CHILD);
 };
