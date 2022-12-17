@@ -9,32 +9,52 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#ifndef EFFECT 
+#define EFFECT
+
 typedef struct EFFECT_COM
 {
-	void GET_EFFECT_COUNT(int32_t COUNT);
-	void GET_SESSION_ID(int32_t INDEX, uint32_t SESSION_ID);
-	void GET_EFFECT_INDEX(uint32_t SESSION_ID, int32_t INDEX);
-	void GET_EFFECT_PLUGIN(uint32_t SESSON_ID, IPLUGIN_NODE_COM);
-	void ADD_EFFECT(IPLUGIN_NODE_COM COM, int32_t INDEX, uint32_t SESSION_ID);
-	void REMOVE_EFFECT(uint32_t SESSION_ID);
-	void GET_PRESET_COUNT(uint32_t SESSION_ID, int32_t COUNT);
-	void GET_PRESET_NAME(uint32_t SESSION_ID, int32_t INDEX, char* NAME);
-	void GET_CURRENT_PRESET();
+	static void GET_EFFECT_COUNT(int32_t COUNT);
+	static void GET_SESSION_ID(int32_t INDEX, uint32_t SESSION_ID);
+	static void GET_EFFECT_INDEX(uint32_t SESSION_ID, int32_t INDEX);
+	static void GET_EFFECT_PLUGIN(uint32_t SESSON_ID);
+	static void ADD_EFFECT(int32_t INDEX, uint32_t SESSION_ID);
+	static void REMOVE_EFFECT(uint32_t SESSION_ID);
+	static void GET_PRESET_COUNT(uint32_t SESSION_ID, int32_t COUNT);
+	static void GET_PRESET_NAME(uint32_t SESSION_ID, int32_t INDEX, char* NAME);
+	static void GET_CURRENT_PRESET();
 
 };
+
+#endif 
+
+#ifndef EVENT
+#define EVENT
 
 typedef struct EVENT_COM
 {
-	void GET_INDEX(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	void GET_MEDIA_TYPE(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	void GET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	void SET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	void GET_START(uint32_t TRACK_ID, );
-	void GET_LENGTH(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_INDEX(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_MEDIA_TYPE(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_START(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_LENGTH(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_CHANNEL_REMAPPING(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_CHANNEL_REMAPPING(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_TIME_STRETCH_PITCH_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_TIME_STRETCH_PITCH_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_PTICH_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
 };
+
+#endif
+
+#ifndef IPLUGIN
+#define IPLUGIN
 
 typedef struct IPLUGIN_NODE_COM
 {
 	void GET_COUNT(int32_t COUNT);
 	void GET_CHILD_BY_INDEX(int32_t INDEX, IPLUGIN_NODE_COM CHILD);
 };
+
+#endif
