@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 #ifndef __AUDIO_H__
-#define AUDIO_H
+#define AUDIO
 #else
 
 #endif 
@@ -20,8 +20,9 @@ typedef struct
 	static bool PITCH_LOCKED;
 	static bool GET_NORMALISE;
 	static bool RESULT;
-	static const double NORMALISE_GAIN;
 	static bool SET_NORM;
+	static double NORMALISE_GAIN;
+	static double GAIN_RESULT;
 
 } AUDIO_EVENT;
 
