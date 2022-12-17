@@ -9,6 +9,13 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#ifndef COM 
+#define COM
+#include "COM.hpp"
+#endif 
+
+static __readonly COM_H::EFFECT_COM;
+
 typedef struct
 {
 	static const uint32_t TRACK_ID;
