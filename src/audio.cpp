@@ -120,5 +120,4 @@ static AUDIO_EVENT FORMAT_SHIFT()
 
 #ifndef SECTION_AUDIO_TRACK
 #define AUDIO_TRACK
-#else
 #endif
