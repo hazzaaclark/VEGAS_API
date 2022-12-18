@@ -5,7 +5,6 @@
 
 #ifndef SECTION_AUDIO_EV
 #define AUDIO_EV
-#else
 #endif
 
 static AUDIO_EVENT MEDIA_TYPE(bool)
