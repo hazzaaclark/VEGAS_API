@@ -37,13 +37,35 @@ typedef struct EVENT_COM
 	static void GET_MEDIA_TYPE(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void SET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
+
 	static void GET_START(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_LENGTH(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_CHANNEL_REMAPPING(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void SET_CHANNEL_REMAPPING(uint32_t TRACK_ID, uint64_t EVENT_ID);
+
 	static void GET_TIME_STRETCH_PITCH_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void SET_TIME_STRETCH_PITCH_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_PTICH_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_PTICH_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
+
+	static void GET_PITCH_SEMIS(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_PITCH_SEMIS(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_CLASSIC_ATTR(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_CLASSIC_ATTR(uint32_t TRACK_ID, uint64_t EVENT_ID);
+
+	static void GET_ELASTIQUE_ATTR(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_ELASTIQUE_ATTR(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_FORMAT_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_FORMAT_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
+
+	static void GET_FORMAT_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_FORMAT_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_IDM);
+	static void GET_INVERSE_PHASE(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_INVERSE_PHASE(uint32_t TRACK_ID, uint64_t EVENT_ID);
+
+	static void MAINTAIN_ASPECT(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_ASPECT(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void REDUCE_INTERLACE(uint32_t TRACK_ID, uint64_t EVENT_ID);
 };
 
 #endif
