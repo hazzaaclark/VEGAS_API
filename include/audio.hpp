@@ -17,16 +17,14 @@ typedef struct
 	static bool IS_AUDIO;
 	static bool IS_VIDEO;
 	static bool INVERT_PHASE;
-	static bool PITCH_LOCKED;
-	static bool GET_NORMALISE;
 	static bool RESULT;
-	static bool SET_NORM;
-	static bool FORMAT_LOCK;
-	static double NORMALISE_GAIN;
-	static double GAIN_RESULT;
-	static double FORMAT_SHIFT;
+	static bool PAN_X_TOUCH;
+	static float VOLUME;
+	static float VOLUME_RESULT;
+	static float AUTOMATED_X_PAN;
+	static float CONTROL_RESULT;
 
-} AUDIO_EVENT;
+} AUDIO_TRACK;
 
 typedef enum AUDIO_GAIN
 {
@@ -92,5 +90,18 @@ typedef struct STRETCH_ATTRIBUTES
 		SOLOIST_MONOPHONIC,
 		SOLOIST_SPEECH
 	};
+};
 
+typedef struct AUDIO_AUTO_CONTROL
+{
+	static float CONTROL_RESULT;
+
+	typedef enum
+	{
+		OFF,
+		READING,
+		ARMED,
+		WRITING
+
+	} CONTROL;
 };
