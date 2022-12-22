@@ -3,9 +3,8 @@
 #include "COM.hpp"
 #include "video.hpp"
 
-#ifndef SECTION_AUDIO_EV
+#ifndef AUDIO_EV
 #define AUDIO_EV
-#endif
 
 static AUDIO_EVENT MEDIA_TYPE(bool)
 {
@@ -118,6 +117,4 @@ static AUDIO_EVENT FORMAT_SHIFT()
 	EVENT_COM::SET_FORMAT_SHIFT(TRACK_EVENT::TRACK_ID, TRACK_EVENT::EVENT_ID);
 }
 
-#ifndef SECTION_AUDIO_TRACK
-#define AUDIO_TRACK
 #endif
