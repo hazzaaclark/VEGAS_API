@@ -33,11 +33,11 @@ typedef struct EFFECT_COM
 
 typedef struct EVENT_COM
 {
-	static void GET_INDEX(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_MEDIA_TYPE(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_EFFECT_COM(uint32_t TRACK_ID, uint64_t EVENT_ID, uint64_t VALUE);
+	static void GET_AUDIO_EFFECT_COM(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_NORMALISE(uint32_t TRACK_ID, uint64_t EVENT_ID, bool VALUE);
 
+	static void GET_INDEX(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_START(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_LENGTH(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_CHANNEL_REMAPPING(uint32_t TRACK_ID, uint64_t EVENT_ID);
@@ -66,7 +66,21 @@ typedef struct EVENT_COM
 	static void MAINTAIN_ASPECT(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void SET_ASPECT(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void REDUCE_INTERLACE(uint32_t TRACK_ID, uint64_t EVENT_ID);
+
 };
+
+typedef struct TRACK_COM
+{
+	static void GET_AUDIO_VOLUME_TRIM(uint32_t TRACK_ID, float EVENT_ID);
+	static void SET_AUDIO_VOLUME_TRIM(uint32_t TRACK_ID, float EVENT_ID);
+	static void GET_MEDIA_TYPE(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void SET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static void GET_AUDIO_PAN_X(uint32_t TRACK_ID, float VALUE);
+	static void SET_PAN_X_TOUCH(uint32_t TRACK_ID, bool VALUE);
+
+};
+
 
 #endif
 
