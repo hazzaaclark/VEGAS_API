@@ -10,4 +10,17 @@ static AUDIO_EVENT MEDIA_TYPE(bool)
 	return;
 }
 
+static EFFECT_COM AUDIO_COM()
+{
+	EVENT_COM::GET_EFFECT_COM;
+	return;
+}
+
+static AUDIO_EVENT NORMALISE()
+{
+	AUDIO_EVENT::RESULT = false;
+	EVENT_COM::GET_NORMALISE;
+	return;
+}
+
 #endif
