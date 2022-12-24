@@ -36,6 +36,8 @@ typedef struct EVENT_COM
 	static void GET_EFFECT_COM(uint32_t TRACK_ID, uint64_t EVENT_ID, uint64_t VALUE);
 	static void GET_AUDIO_EFFECT_COM(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_NORMALISE(uint32_t TRACK_ID, uint64_t EVENT_ID, bool VALUE);
+	static void SET_NORMALISE(uint32_t TRACK_ID, uint64_t EVENT_ID, bool NORMALISE, double GAIN);
+
 
 	static void GET_INDEX(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void GET_START(uint32_t TRACK_ID, uint64_t EVENT_ID);
@@ -66,6 +68,8 @@ typedef struct EVENT_COM
 	static void MAINTAIN_ASPECT(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void SET_ASPECT(uint32_t TRACK_ID, uint64_t EVENT_ID);
 	static void REDUCE_INTERLACE(uint32_t TRACK_ID, uint64_t EVENT_ID);
+
+	static void GET_NORMALISE_GAIN(uint32_t TRACK_ID, uint64_t EVENT_ID, double VALUE);
 
 };
 
