@@ -1,92 +1,118 @@
 #pragma once
 
-#ifndef __COM_H__
-#define COM_H
-#else
-#endif
-
+#include <assert.h>
+#include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
+#include <stdlib.h>
 
-#ifndef EFFECT 
-#define EFFECT
-
-typedef struct EFFECT_COM
-{
-	static void GET_EFFECT_COUNT(int32_t COUNT);
-	static void GET_SESSION_ID(int32_t INDEX, uint32_t SESSION_ID);
-	static void GET_EFFECT_INDEX(uint32_t SESSION_ID, int32_t INDEX);
-	static void GET_EFFECT_PLUGIN(uint32_t SESSON_ID);
-	static void ADD_EFFECT(int32_t INDEX, uint32_t SESSION_ID);
-	static void REMOVE_EFFECT(uint32_t SESSION_ID);
-	static void GET_PRESET_COUNT(uint32_t SESSION_ID, int32_t COUNT);
-	static void GET_PRESET_NAME(uint32_t SESSION_ID, int32_t INDEX, char* NAME);
-	static void GET_CURRENT_PRESET();
-
-};
+#ifndef __AUDIO_H__
+#define AUDIO
+#else
 
 #endif 
 
-#ifndef EVENT
-#define EVENT
-
-typedef struct EVENT_COM
+typedef struct
 {
-	static void GET_INDEX(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_START(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_LENGTH(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_CHANNEL_REMAPPING(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_CHANNEL_REMAPPING(uint32_t TRACK_ID, uint64_t EVENT_ID);
+	static bool IS_AUDIO;
+	static bool IS_VIDEO;
+	static bool INVERT_PHASE;
+	static bool RESULT;
+	static bool PAN_X_TOUCH;
+	static float VOLUME;
+	static float VOLUME_RESULT;
+	static float AUTOMATED_X_PAN;
+	static float CONTROL_RESULT;
 
-	static void GET_TIME_STRETCH_PITCH_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_TIME_STRETCH_PITCH_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_PTICH_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_PTICH_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
+} AUDIO_TRACK;
 
-	static void GET_PITCH_SEMIS(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_PITCH_SEMIS(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_CLASSIC_ATTR(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_CLASSIC_ATTR(uint32_t TRACK_ID, uint64_t EVENT_ID);
+typedef struct
+{
+	static bool IS_AUDIO;
+	static bool IS_VIDEO;
+	static bool NORMALISE;
+	static bool RESULT;
+	static double NORMALISE_GAIN;
+	static double NORMALISED_GAIN_RESULT;
 
-	static void GET_ELASTIQUE_ATTR(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_ELASTIQUE_ATTR(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_FORMAT_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_FORMAT_LOCK(uint32_t TRACK_ID, uint64_t EVENT_ID);
+} AUDIO_EVENT;
 
-	static void GET_FORMAT_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_FORMAT_SHIFT(uint32_t TRACK_ID, uint64_t EVENT_IDM);
-	static void GET_INVERSE_PHASE(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_INVERSE_PHASE(uint32_t TRACK_ID, uint64_t EVENT_ID);
-
-	static void MAINTAIN_ASPECT(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_ASPECT(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void REDUCE_INTERLACE(uint32_t TRACK_ID, uint64_t EVENT_ID);
-
+typedef enum AUDIO_GAIN
+{
+	NORM = 1,
+	GAIN = 2,
+	NONE = 0
 };
 
-typedef struct TRACK_COM
+typedef enum AUDIO_OPERATION
 {
-	static void GET_AUDIO_VOLUME_TRIM(uint32_t TRACK_ID, float EVENT_ID);
-	static void SET_AUDIO_VOLUME_TRIM(uint32_t TRACK_ID, float EVENT_ID);
-	static void GET_MEDIA_TYPE(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void SET_NAME(uint32_t TRACK_ID, uint64_t EVENT_ID);
-	static void GET_AUDIO_PAN_X(uint32_t TRACK_ID, float VALUE);
-	static void SET_PAN_X_TOUCH(uint32_t TRACK_ID, bool VALUE);
-
+	EQUAL = '=',
+	NOT_EQ_TO = '!=',
 };
 
-
-#endif
-
-#ifndef IPLUGIN
-#define IPLUGIN
-
-typedef struct IPLUGIN_NODE_COM
+typedef enum CHANNEL_MAPPING
 {
-	void GET_COUNT(int32_t COUNT);
-	void GET_CHILD_BY_INDEX(int32_t INDEX, IPLUGIN_NODE_COM CHILD);
+	NONE = 1000,
+	DISABLE_L,
+	DISABLE_R,
+	MUTE_L,
+	MUTE_R,
+	MONO,
+	SWAP
 };
 
-#endif
+typedef enum TIME_STRETCH_PITCH_SHIFT
+{
+	CLASSIC = 1,
+	ACID = 2,
+	ELASTIQUE = 3,
+	NONE
+};
+
+typedef struct STRETCH_ATTRIBUTES
+{
+	enum CLASSIC
+	{
+		A1,
+		A2,
+		A3,
+		A4,
+		A5,
+		A6,
+		A7,
+		A8,
+		A9,
+		A10,
+		A11,
+		A12,
+		A13,
+		A14,
+		A15,
+		A16,
+		A17,
+		A18,
+		A19
+	};
+
+	enum ELASTIQUE
+	{
+		PRO,
+		EFFICIENT,
+		SOLOIST_MONOPHONIC,
+		SOLOIST_SPEECH
+	};
+};
+
+typedef struct AUDIO_AUTO_CONTROL
+{
+	static float CONTROL_RESULT;
+
+	typedef enum
+	{
+		OFF,
+		READING,
+		ARMED,
+		WRITING
+
+	} CONTROL;
+};
